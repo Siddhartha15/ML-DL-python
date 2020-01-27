@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jan 27 18:53:42 2020
+Created on Mon Jan 27 22:46:24 2020
 
 @author: siddhartha
 """
 
-# SVM
+# Kernel SVM
 
 # Importing the libraries
 import numpy as np
@@ -31,7 +31,7 @@ X_test = sc.transform(X_test)
 # Fitting classifier to the Training set
 # Create your classifier here
 from sklearn.svm import SVC
-classifier = SVC(kernel='rbf',random_state=0)
+classifier = SVC(kernel = 'rbf',random_state=0)
 classifier.fit(X_train,y_train)
 
 # Predicting the Test set results
@@ -53,7 +53,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('SVM (kernel = rbf) (Training set)')
+plt.title('Classifier (Training set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
@@ -71,7 +71,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('SVM (kernel = rbf) (Test set)')
+plt.title('Classifier (Test set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()

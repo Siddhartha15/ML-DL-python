@@ -73,6 +73,13 @@ classifier.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accurac
 #Fiting the ANN to training set 
 classifier.fit(X_train, y_train, batch_size=10,epochs=100)
 
+y_pred = classifier.predict(X_test)
+
+#from sklearn.metrics import accuracy_score
+#a=accuracy_score(y_true=y_test,y_pred=y_pred.round())
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test,y_pred.round())
 
 
 
